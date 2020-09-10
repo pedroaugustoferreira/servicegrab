@@ -7,4 +7,4 @@ curl -O https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/maste
 chmod +x main.sh
 cat /var/spool/cron/tabs/root |grep -v "servicegrab" > /tmp/root.cron
 cat /tmp/root.cron > /var/spool/cron/tabs/root
-echo "6 * * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> /var/spool/cron/tabs/root
+echo "0 6 * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> /var/spool/cron/tabs/root
