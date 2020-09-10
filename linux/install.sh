@@ -1,4 +1,6 @@
 #! /bin/bash -l
+# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --
+
 mkdir /var/log/servicegrab 2> /dev/null
 cd /var/log/servicegrab
 curl -O https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh
