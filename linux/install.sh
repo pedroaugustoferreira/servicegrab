@@ -17,7 +17,7 @@ cd /var/log/servicegrab
 curl -O https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh
 chmod +x main.sh
 
-cat $cronfile |grep -v "servicegrab" > /tmp/root.cron
+cat $cronfile |grep -v "servicegrab" > /tmp/root.cron &> /dev/null
 
-cat /tmp/root.cron > $cronfile
+cat /tmp/root.cron > $cronfile &> /dev/null
 echo "0 6 * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> $cronfile
