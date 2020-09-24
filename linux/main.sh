@@ -1,7 +1,7 @@
 #! /bin/bash -l
 cd /var/log/servicegrab
 
-remove="*_$(date --date='-1 month' "+%m")_*"
+remove="*_$(date --date='-2 month' "+%m")_*"
 ls $remove 2> /dev/null |grep -v "^01_"| awk '{print "rm -rf "$1}' | sh
 
 gzip -f *.txt 2> /dev/null
