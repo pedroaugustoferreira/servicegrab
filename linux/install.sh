@@ -1,7 +1,7 @@
 #! /bin/bash -l
 # curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --
 
-cat /etc/*rele*|egrep "CentOS Linux 7" &> /dev/null
+cat /etc/*rele*|egrep "CentOS Linux 7|Red Hat Enterprise Linux Server release 7" &> /dev/null
 if [ "$?" -eq "0"  ]; then
     cronfile=/var/spool/cron/root
 fi
