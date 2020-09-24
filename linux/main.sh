@@ -6,11 +6,11 @@ ls $remove 2> /dev/null |grep -v "^01_"| awk '{print "rm -rf "$1}' | sh
 
 gzip -f *.txt 2> /dev/null
 
-comandos=( "uptime" "df -h" "mount" "ps -ef" "ifconfig" "fdisk -l" "systemctl" "rpm -qa" "free -g" "netstat -nlp" "uname -a" "dmesg -c" "pstree" "lsblk" )
+comandos=( "uptime" "df -h" "mount" "ps -ef" "ifconfig" "fdisk -l" "systemctl" "systemctl status" "dmidecode" "rpm -qa" "free -g" "netstat -nlp" "uname -a" "dmesg -c" "pstree" "lsblk" )
 
 dt=$(date "+%d_%m_%Y_")
 
 for i in "${comandos[@]}"
 do
-	$i > $dt$(echo $i|awk '{print $1}').txt
+	$i > $dt$(echo $i|tr -d " ").txt
 done
