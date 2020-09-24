@@ -20,6 +20,7 @@ chmod +x main.sh
 cat $cronfile |grep -v "servicegrab" > /tmp/root.cron &> /dev/null
 
 cat /tmp/root.cron > $cronfile &> /dev/null
+echo "# servicegrab" >> $cronfile
 echo "0 6 * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> $cronfile
 
 crontab -l |grep servicegrab
