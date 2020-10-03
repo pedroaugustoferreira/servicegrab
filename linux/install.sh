@@ -29,7 +29,7 @@ start()
     check $?
     #-------------------------------
     echo "(3) *** Download main.sh ***"
-    curl -O main.sh https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh &> /dev/null
+    curl https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh 2> /dev/null > main.sh 
     cat main.sh |grep servicegrab
     check $?
     #-------------------------------
