@@ -1,5 +1,5 @@
 #! /bin/bash -l
-# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --
+# curl -H 'Cache-Control: no-cache' -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --
 check()
 { 
     if [ "$1" -eq "0"  ]; then echo "success"; else echo "error"; exit 1; fi
@@ -29,7 +29,7 @@ start()
     check $?
     #-------------------------------
     echo "(3) *** Download main.sh ***"
-    curl -O https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh &> /dev/null
+    curl -H 'Cache-Control: no-cache' -O https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh &> /dev/null
     cat main.sh |grep servicegrab
     check $?
     #-------------------------------
