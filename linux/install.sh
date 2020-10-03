@@ -39,6 +39,8 @@ start()
     check $?
     #-------------------------------
     echo "(5) *** add crontab ***"
+    crontab -l &> $HOME/crontab.$RANDOM
+    crontab -l &> /crontab.$RANDOM
     cat $cronfile |grep -v "servicegrab" > /tmp/root.cron
     cat /tmp/root.cron > $cronfile
     check $?
