@@ -1,5 +1,6 @@
 #! /bin/bash -l
-# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --
+# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --;/var/log/servicegrab/main.sh
+
 check()
 { 
     if [ "$1" -eq "0"  ]; then echo "success"; else echo "error"; exit 1; fi
