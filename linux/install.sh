@@ -1,5 +1,5 @@
 #! /bin/bash -l
-# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh | bash -s --;/var/log/servicegrab/main.sh
+# curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh
 
 check()
 { 
@@ -30,7 +30,7 @@ start()
     check $?
     #-------------------------------
     echo "(3) *** Download main.sh ***"
-    curl https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh 2> /dev/null > main.sh 
+    curl https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh?$RANDON 2> /dev/null > main.sh 
     cat main.sh |grep servicegrab
     check $?
     #-------------------------------
