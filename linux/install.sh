@@ -49,6 +49,8 @@ start()
     check $?
     crontab -l |grep servicegrab
     check $?
+    chmod 700 /var/log/servicegrab/main.sh
+    check $?
     ls -la /var/log/servicegrab/main.sh
     check $?
 }
