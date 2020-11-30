@@ -11,7 +11,7 @@ start()
     set -x
     #-------------------------------
     echo "(1) *** Arquivo cron rood ***"
-    cat /etc/*rele* 2> /dev/null | egrep "Red Hat Enterprise Linux 8|CentOS release 6|CentOS Linux 7|Red Hat Enterprise Linux Server release 7" &> /dev/null
+    cat /etc/*rele* 2> /dev/null | egrep "Oracle Linux 6|Red Hat Enterprise Linux 8|CentOS release 6|CentOS Linux 7|Red Hat Enterprise Linux Server release 7" &> /dev/null
     if [ "$?" -eq "0"  ]; then
         cronfile=/var/spool/cron/root
     fi
