@@ -1,5 +1,10 @@
 #! /bin/bash -l
+# Online 
 # crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+
+# Offline
+# sh install.sh;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+
 
 check()
 { 
