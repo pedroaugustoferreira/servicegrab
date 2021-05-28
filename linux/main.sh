@@ -11,5 +11,5 @@ dt=$(date "+%d_%m_%Y_")
 
 for i in "${comandos[@]}"
 do
-		$i > $dt$(echo $i|tr -d " "|tr -s "/" "-"|tr -s "\" "-").txt
+		$i > $dt$(echo $i|tr -d " "|tr -s "/" "-"|tr -s '\\' '-').txt
 done
