@@ -1,6 +1,6 @@
 #! /bin/bash -l
 # Online 
-# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh
 
 # Offline
 # sh install.sh;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
@@ -58,6 +58,7 @@ start()
     check $?
     ls -la /var/log/servicegrab/main.sh
     check $?
+    ls -la /var/log/servicegrab/
 }
 
 start 2>&1 |egrep -v "for|start|grep|env|cut|echo|\+\+|sed|\[|cat|check|curl|exit"
