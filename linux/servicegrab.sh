@@ -1,4 +1,5 @@
 #! /bin/bash -l
+#version 15-06-2021
 
 ps -ef|grep servicegrab.sh|grep -v grep
 if [ "$?" -eq "0" ];
@@ -7,12 +8,7 @@ then
 	exit 1
 fi
 
-
-
-
 cd /var/log/servicegrab
-
-
 
 find /var/log/servicegrab/ -type f  ! -name "01_*" -mtime +60 -exec rm -f {} \;
 
