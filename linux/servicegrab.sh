@@ -1,5 +1,18 @@
 #! /bin/bash -l
+
+ps -ef|grep servicegrab.sh|grep -v grep
+if [ "$?" -eq "0" ];
+then
+	echo "servicegrab em execucao"
+	exit 1
+fi
+
+
+
+
 cd /var/log/servicegrab
+
+
 
 find /var/log/servicegrab/ -type f  ! -name "01_*" -mtime +60 -exec rm -f {} \;
 
