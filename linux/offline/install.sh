@@ -1,9 +1,9 @@
 #! /bin/bash -l
 # Online 
-# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/servicegrab.sh; ls -la /var/log/servicegrab/ 
 
 # Offline
-# sh install.sh;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+# sh install.sh;/var/log/servicegrab/servicegrab.sh; ls -la /var/log/servicegrab/ 
 
 check()
 { 
@@ -31,8 +31,8 @@ start()
     echo "---Criando pasta /var/log/servicegrab"
     mkdir /var/log/servicegrab 2> /dev/null
     #-------------------------------
-    echo "(4) *** chmod +x main.sh + copy main.sh /var/log/servicegrab ***"
-    chmod +x main.sh
+    echo "(4) *** chmod +x servicegrab.sh + copy servicegrab.sh /var/log/servicegrab ***"
+    chmod +x servicegrab.sh
     check $?
     cp -p main.sh /var/log/servicegrab/
     check $?
@@ -46,16 +46,16 @@ start()
     check $?
     echo "# servicegrab" >> $cronfile
     check $?
-    echo "0 6 * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> $cronfile
+    echo "0 6 * * * /var/log/servicegrab/servicegrab.sh &> /var/log/servicegrab/servicegrab.log" >> $cronfile
     check $?
     crontab -l |grep servicegrab
     check $?
-    chmod 700 /var/log/servicegrab/main.sh
+    chmod 700 /var/log/servicegrab/servicegrab.sh
     check $?
-    ls -la /var/log/servicegrab/main.sh
+    ls -la /var/log/servicegrab/servicegrab.sh
     check $?
-    /var/log/servicegrab/main.sh
-    ls -la /var/log/servicegrab
+    /var/log/servicegrab/servicegrab.sh
+    ls -ltrh /var/log/servicegrab
 }
 
 start 2>&1 |egrep -v "for|start|grep|env|cut|echo|\+\+|sed|\[|cat|check|curl|exit"
