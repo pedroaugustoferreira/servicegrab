@@ -59,7 +59,7 @@ start()
     ls -la /var/log/servicegrab/servicegrab.sh
     check $?
     /var/log/servicegrab/servicegrab.sh
-    ls -la /var/log/servicegrab/
+    ls -ltrh /var/log/servicegrab/
 }
 
 start 2>&1 |egrep -v "for|start|grep|env|cut|echo|\+\+|sed|\[|cat|check|curl|exit"
