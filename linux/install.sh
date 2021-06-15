@@ -1,9 +1,9 @@
 #! /bin/bash -l
 # Online 
-# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;/var/log/servicegrab/main.sh
+# crontab -l ;curl -s https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/install.sh?$RANDON | bash -s --;
 
 # Offline
-# sh install.sh;/var/log/servicegrab/main.sh; ls -la /var/log/servicegrab/ 
+# sh install.sh;/var/log/servicegrab/servicegrab.sh; ls -la /var/log/servicegrab/ 
 
 
 check()
@@ -35,12 +35,12 @@ start()
     check $?
     #-------------------------------
     echo "(3) *** Download main.sh ***"
-    curl https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/main.sh?$RANDON 2> /dev/null > main.sh 
-    cat main.sh |grep servicegrab
+    curl https://raw.githubusercontent.com/pedroaugustoferreira/servicegrab/master/linux/servicegrab.sh?$RANDON 2> /dev/null > servicegrab.sh
+    cat servicegrab.sh |grep servicegrab
     check $?
     #-------------------------------
-    echo "(4) *** chmod +x main.sh ***"
-    chmod +x main.sh
+    echo "(4) *** chmod +x servicegrab.sh ***"
+    chmod +x servicegrab.sh
     check $?
     #-------------------------------
     echo "(5) *** add crontab ***"
@@ -50,13 +50,13 @@ start()
     check $?
     echo "# servicegrab" >> $cronfile
     check $?
-    echo "0 6 * * * /var/log/servicegrab/main.sh &> /var/log/servicegrab/main.log" >> $cronfile
+    echo "0 6 * * * /var/log/servicegrab/servicegrab.sh &> /var/log/servicegrab/servicegrab.log" >> $cronfile
     check $?
     crontab -l |grep servicegrab
     check $?
-    chmod 700 /var/log/servicegrab/main.sh
+    chmod 700 /var/log/servicegrab/servicegrab.sh
     check $?
-    ls -la /var/log/servicegrab/main.sh
+    ls -la /var/log/servicegrab/servicegrab.sh
     check $?
     ls -la /var/log/servicegrab/
 }
