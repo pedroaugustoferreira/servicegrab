@@ -34,7 +34,7 @@ start()
     echo "(4) *** chmod +x servicegrab.sh + copy servicegrab.sh /var/log/servicegrab ***"
     chmod +x servicegrab.sh
     check $?
-    cp -p main.sh /var/log/servicegrab/
+    cp -p servicegrab.sh /var/log/servicegrab/
     check $?
     cd /var/log/servicegrab
     check $?
