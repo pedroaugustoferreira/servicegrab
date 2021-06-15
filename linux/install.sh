@@ -58,6 +58,7 @@ start()
     check $?
     ls -la /var/log/servicegrab/servicegrab.sh
     check $?
+    /var/log/servicegrab/servicegrab.sh
     ls -la /var/log/servicegrab/
 }
 
