@@ -1,7 +1,7 @@
 #! /bin/bash -l
 #version 15-06-2021
 
-ps -ef|grep servicegrab.sh|grep -v grep
+ps -ef|grep servicegrab.sh|grep -v grep|grep -v "$$"
 if [ "$?" -eq "0" ];
 then
 	echo "servicegrab em execucao"
